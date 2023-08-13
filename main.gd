@@ -13,7 +13,7 @@ func spawn_ball():
 
 	ball.position = ball_spawn.position
 
-	add_child(ball)
+	call_deferred("add_child", ball)
 
 
 func _on_player_goal_ball_hit():
