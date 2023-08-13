@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dk5i2txk83wrr"]
+
+[ext_resource type="FontFile" uid="uid://bols723malh0t" path="res://assets/Play-Regular.ttf" id="1_dfw6v"]
+
+[resource]
+line_spacing = 2.08165e-12
+font = ExtResource("1_dfw6v")
+font_size = 64

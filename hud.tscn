@@ -1,12 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://73vnkhu47fjc"]
+[gd_scene load_steps=3 format=3 uid="uid://73vnkhu47fjc"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_rcrv4"]
-[ext_resource type="FontFile" uid="uid://bols723malh0t" path="res://assets/Play-Regular.ttf" id="2_d8gkc"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_hflxu"]
-line_spacing = 2.08165e-12
-font = ExtResource("2_d8gkc")
-font_size = 64
+[ext_resource type="LabelSettings" uid="uid://dk5i2txk83wrr" path="res://resources/label.tres" id="2_w0phw"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_rcrv4")
@@ -20,6 +15,19 @@ offset_right = 20.0
 offset_bottom = 26.0
 grow_horizontal = 2
 text = "0 : 0"
-label_settings = SubResource("LabelSettings_hflxu")
+label_settings = ExtResource("2_w0phw")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Get Ready"
+label_settings = ExtResource("2_w0phw")
+horizontal_alignment = 1

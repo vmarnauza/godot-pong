@@ -29,5 +29,10 @@ position = Vector2(1120, 320)
 
 [node name="HUD" parent="." instance=ExtResource("5_8twaw")]
 
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="ball_hit" from="PlayerGoal" to="." method="_on_player_goal_ball_hit"]
 [connection signal="ball_hit" from="OpponentGoal" to="." method="_on_opponent_goal_ball_hit"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
