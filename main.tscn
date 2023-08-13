@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://5eooh4bxk36l"]
+[gd_scene load_steps=6 format=3 uid="uid://5eooh4bxk36l"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1iitm"]
 [ext_resource type="PackedScene" uid="uid://cygspu5qmav8x" path="res://ball.tscn" id="1_qn8vw"]
 [ext_resource type="PackedScene" uid="uid://c07hxtf2db4lw" path="res://goal.tscn" id="2_ycckh"]
 [ext_resource type="PackedScene" uid="uid://dittmptfpu6c2" path="res://paddle.tscn" id="4_rn61c"]
+[ext_resource type="PackedScene" uid="uid://73vnkhu47fjc" path="res://hud.tscn" id="5_8twaw"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1iitm")
@@ -26,5 +27,7 @@ is_player = true
 [node name="OpponentPaddle" parent="." instance=ExtResource("4_rn61c")]
 position = Vector2(1120, 320)
 
+[node name="HUD" parent="." instance=ExtResource("5_8twaw")]
+
 [connection signal="ball_hit" from="PlayerGoal" to="." method="_on_player_goal_ball_hit"]
-[connection signal="ball_hit" from="OpponentGoal" to="." method="_on_player_goal_ball_hit"]
+[connection signal="ball_hit" from="OpponentGoal" to="." method="_on_opponent_goal_ball_hit"]
