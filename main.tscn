@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://5eooh4bxk36l"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_1iitm"]
+[ext_resource type="PackedScene" uid="uid://cygspu5qmav8x" path="res://ball.tscn" id="1_qn8vw"]
+[ext_resource type="PackedScene" uid="uid://c07hxtf2db4lw" path="res://goal.tscn" id="2_ycckh"]
+[ext_resource type="PackedScene" uid="uid://dittmptfpu6c2" path="res://paddle.tscn" id="4_rn61c"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1iitm")
+ball_scene = ExtResource("1_qn8vw")
+
+[node name="PlayerGoal" parent="." instance=ExtResource("2_ycckh")]
+position = Vector2(-12, 8)
+is_player_goal = true
+
+[node name="OpponentGoal" parent="." instance=ExtResource("2_ycckh")]
+position = Vector2(1164, 8)
+
+[node name="BallSpawn" type="Node2D" parent="."]
+position = Vector2(576, 320)
+
+[node name="PlayerPaddle" parent="." instance=ExtResource("4_rn61c")]
+position = Vector2(32, 320)
+is_player = true
+
+[node name="OpponentPaddle" parent="." instance=ExtResource("4_rn61c")]
+position = Vector2(1120, 320)
+
+[connection signal="ball_hit" from="PlayerGoal" to="." method="_on_player_goal_ball_hit"]
+[connection signal="ball_hit" from="OpponentGoal" to="." method="_on_player_goal_ball_hit"]
